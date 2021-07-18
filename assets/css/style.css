@@ -1851,3 +1851,35 @@ section {
     padding-top: 4px;
   }
 }
+
+
+/* buttonsoft style */
+.card-header {
+  margin: 1px 0 5px 0;
+  background: rgba(40, 58, 90, 0.9);
+  color: #ffffff;
+  font-family: "Jost", sans-serif;
+}
+
+p {
+  font-size: 16px;
+  font-family: "Jost", sans-serif;
+}
+
+#judul {
+  margin: 1px 0 5px 0;
+  background: rgba(40, 58, 90, 0.9);
+  color: #ffffff;
+  font-family: "Jost", sans-serif;
+  border: 3px double;
+}
+
+/* #button-search form input[type="submit"] { */
+/* #button-search {
+  background: #47b2e4;
+  transition: 0.3s;
+}
+
+#button-search form input[type="submit"]:hover {
+  background: #209dd8;
+} */
