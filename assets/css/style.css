@@ -1874,6 +1874,11 @@ p {
   border: 3px double;
 }
 
+#text-mutted {
+  font-size: 14px;
+  font-family: "Jost", sans-serif;
+}
+
 /* #button-search form input[type="submit"] { */
 /* #button-search {
   background: #47b2e4;
