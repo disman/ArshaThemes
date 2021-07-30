@@ -46,17 +46,17 @@
 
       <!-- Uncomment below if you prefer to use an image logo -->
       <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
-      <h1 class="logo me-auto"><a href="index.html"><b>Desa Bahari</b></a></h1>
+      <h1 class="logo me-auto"><a href="index.html"><b>SIDesa Bahari</b></a></h1>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="#hero">Beranda</a></li>
+          <li><a class="nav-link scrollto " href="index.html">Beranda</a></li>
           <li class="dropdown"><a href="#"><span>Profil Desa</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Wilayah Desa</a></li>
-              <li><a href="#">Potensi Desa</a></li>
-              <li><a href="#">Masyarakat Desa</a></li>
-              <li><a href="#">Sejarah Desa</a></li>
+              <li><a href="wilayah-desa.html">Wilayah Desa</a></li>
+              <li><a href="wilayah-desa.html">Potensi Desa</a></li>
+              <li><a href="masyarakat-desa.html">Masyarakat Desa</a></li>
+              <li><a href="sejarah-desa.html">Sejarah Desa</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Pemerintahan Desa</span> <i class="bi bi-chevron-down"></i></a>
@@ -87,11 +87,11 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
+    <section class="breadcrumbs">
       <div class="container">
         <p>
-          <marquee><b>Selamat datang di website resmi Desa Bahari. Website ini sebagai media pertukaran
-              informasi.</b></marquee>
+          <marquee>Selamat datang di website resmi Desa Bahari. Website ini sebagai media pertukaran
+            informasi.</marquee>
         </p>
       </div>
     </section><!-- End Breadcrumbs -->
@@ -228,38 +228,54 @@
                 </ul>
               </div>
             </div>
-            <!-- Side widget-->
             <!-- Statistik penduduk widget-->
             <div class="card mb-4" data-aos="fade-up">
               <div class="card-header">
                 <b>Statistik Penduduk</b>
               </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-sm-6">
-                    <ul class="list-unstyled mb-0">
-                      <li><a href="#!">Web Design</a></li>
-                      <li><a href="#!">HTML</a></li>
-                      <li><a href="#!">Freebies</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-sm-6">
-                    <ul class="list-unstyled mb-0">
-                      <li><a href="#!">JavaScript</a></li>
-                      <li><a href="#!">CSS</a></li>
-                      <li><a href="#!">Tutorials</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <figure class="highcharts-figure">
+                <div class="card-body" id="penduduk"></div>
+              </figure>
             </div>
             <!-- Side widget-->
             <div class="card mb-4" data-aos="fade-up">
               <div class="card-header">
                 <b>Statistik Pengunjung</b>
               </div>
-              <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use,
-                and feature the Bootstrap 5 card component!</div>
+              <div class="card-body">
+                <table class="table table-striped">
+                  <tr>
+                    <td>Hari ini</td>
+                    <td>:</td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>Kemarin</td>
+                    <td>:</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td>:</td>
+                    <td>123</td>
+                  </tr>
+                  <tr>
+                    <td>Sistem Operasi</td>
+                    <td>:</td>
+                    <td>Linux</td>
+                  </tr>
+                  <tr>
+                    <td>IP Address</td>
+                    <td>:</td>
+                    <td>123.123.123.234</td>
+                  </tr>
+                  <tr>
+                    <td>Browser</td>
+                    <td>:</td>
+                    <td>Chrome 10.10.1000.82</td>
+                  </tr>
+                </table>
+              </div>
             </div>
             <!-- Arsip widget-->
             <div class="card mb-4" data-aos="fade-up">
@@ -434,6 +450,177 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Hightcharts -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script type="text/javascript">
+    // Chart penduduk
+    // Create the chart
+    Highcharts.chart('penduduk', {
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Jumlah Penduduk'
+      },
+      accessibility: {
+        announceNewData: {
+          enabled: true
+        }
+      },
+      xAxis: {
+        type: 'category'
+      },
+      yAxis: {
+        title: {
+          text: 'Grafik Penduduk'
+        }
+
+      },
+      legend: {
+        enabled: false
+      },
+      plotOptions: {
+        series: {
+          borderWidth: 0,
+          dataLabels: {
+            enabled: true,
+            format: '{point.y:.1f}%'
+          }
+        }
+      },
+
+      tooltip: {
+        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+      },
+
+      series: [{
+        name: "Penduduk",
+        colorByPoint: true,
+        data: [{
+            name: "Laki-Laki",
+            y: 4.02,
+            drilldown: "Laki-Laki"
+          },
+          {
+            name: "Perempuan",
+            y: 5.58,
+            drilldown: "Perempuan"
+          },
+          {
+            name: "Total",
+            y: 10.57,
+            drilldown: "Total"
+          }
+        ]
+      }],
+      drilldown: {
+        series: [{
+            name: "Laki-Laki",
+            id: "Laki-Laki",
+            data: [
+              [
+                "v58.0",
+                1.02
+              ],
+              [
+                "v57.0",
+                7.36
+              ],
+              [
+                "v56.0",
+                0.35
+              ],
+              [
+                "v55.0",
+                0.11
+              ],
+              [
+                "v54.0",
+                0.1
+              ],
+              [
+                "v52.0",
+                0.95
+              ],
+              [
+                "v51.0",
+                0.15
+              ],
+              [
+                "v50.0",
+                0.1
+              ],
+              [
+                "v48.0",
+                0.31
+              ],
+              [
+                "v47.0",
+                0.12
+              ]
+            ]
+          },
+          {
+            name: "Perempuan",
+            id: "Perempuan",
+            data: [
+              [
+                "v11.0",
+                3.39
+              ],
+              [
+                "v10.1",
+                0.96
+              ],
+              [
+                "v10.0",
+                0.36
+              ],
+              [
+                "v9.1",
+                0.54
+              ],
+              [
+                "v9.0",
+                0.13
+              ],
+              [
+                "v5.1",
+                0.2
+              ]
+            ]
+          },
+          {
+            name: "Total",
+            id: "Total",
+            data: [
+              [
+                "v16",
+                2.6
+              ],
+              [
+                "v15",
+                0.92
+              ],
+              [
+                "v14",
+                0.4
+              ],
+              [
+                "v13",
+                0.1
+              ]
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 
 </body>
 
