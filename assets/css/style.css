@@ -646,7 +646,7 @@ section {
   font-size: 14px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 12px 32px;
+  padding: 7px 18px;
   border-radius: 4px;
   transition: 0.3s;
   line-height: 1;
@@ -1863,7 +1863,7 @@ section {
 }
 
 p {
-  font-size: 19px;
+  font-size: 17px;
 }
 
 #footer p {
